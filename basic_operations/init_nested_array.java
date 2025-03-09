@@ -4,14 +4,22 @@ import java.util.List;
 import java.util.Scanner;
 
 public class init_nested_array {
+    private List<List<Integer>> array;
+    public init_nested_array(int rows,int cols)
+    {
+        this.array = Nested_List_INIT(rows,cols);
+    }
+    public List<List<Integer>> get_array(){
+        return array;
+    }
     public static void main(String[] args)
     {
         System.out.print("Enter the number of rows");
         int rows = get_user_input();
         System.out.print("Enter the number of cols");
         int cols = get_user_input();
-        List<List<Integer>> array = Nested_List_INIT(rows, cols);
-        System.out.println(array);
+        init_nested_array object = new init_nested_array(rows, cols);
+        System.out.println(object.get_array());
     }
 
     public static List<List<Integer>> Nested_List_INIT(int rows , int cols)
